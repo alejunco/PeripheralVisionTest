@@ -1,0 +1,5 @@
+
+nmp init
+npm i jquery -S
+npm i http-server -D
+create index.html
