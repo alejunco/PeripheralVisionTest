@@ -1,0 +1,67 @@
+<div class="container">
+  <div>
+    <main-navbar></main-navbar>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <!-- <h3>{{vm.title}}</h3> -->
+      <h2>Test Configuration</h2>
+      <!-- <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p> -->
+      <!-- <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title"></h3>
+        </div>
+        <div class="panel-body">
+          <form class="form-horizontal">
+            <fieldset>
+              <legend>Measures</legend>
+              <div class="form-group">
+                <label for="inputSquareSize" class="col-md-3 control-label">Square Size</label>
+                <div class="col-md-3">
+                  <input type="number" min='5' ng-model='vm.squareSize' class="form-control" id="inputSquareSize" placeholder="in pixels">
+                </div>
+                <label for="inputPadding" class="col-md-3 control-label">Border Distance</label>
+                <div class="col-md-3">
+                  <input type="number" ng-model="vm.padding" class="form-control" id="inputPadding" placeholder="in pixels">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputTargetSize" class="col-md-3 control-label">Target Size</label>
+                <div class="col-md-3">
+                  <input type="number" ng-model="vm.centerItemSize" class="form-control" id="inputTargetSize" placeholder="in pixels">
+                </div>
+              </div>
+              <legend>Colors</legend>
+              <div class="form-group">
+                <label for="select" class="col-md-3 control-label">Square</label>
+                <div class="col-md-3">
+                  <color-picker ng-model="vm.squareBackgroundColor" options="vm.colorPickerOptions"></color-picker>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="select" class="col-md-3 control-label">Square Border</label>
+                <div class="col-md-3">
+                  <color-picker ng-model="vm.squareBorderColor" options="vm.colorPickerOptions"></color-picker>
+                </div>
+              </div>
+              <legend>Timing</legend>
+              <div class="form-group">
+                <label for="select" class="col-md-4 control-label">Square Spanning Range</label>
+                <div class="col-md-12">
+                  <rzslider rz-slider-model="vm.slider.minValue" rz-slider-high="vm.slider.maxValue" rz-slider-options="vm.slider.options"></rzslider>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-2 col-md-offset-10">
+                  <!-- <button type="reset" class="btn btn-default">Cancel</button> -->
+                  <button type="button" class="btn btn-primary" ng-click="vm.saveConfig()">Save</button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

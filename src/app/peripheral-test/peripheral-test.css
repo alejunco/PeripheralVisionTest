@@ -1,0 +1,20 @@
+#navbar button {
+  margin: 0 5px;
+}
+
+#navbar button {
+  font-size: 2em;
+}
+
+#navbar button .octicon {
+  font-size: 1.1em;
+}
+
+nav.navbar-hidden {
+  transform: translateY(-85%);
+  transition: all .75s ease 1s;
+}
+
+.navbar-fixed-top {
+  transition: all .5s ease 0.1s !important;
+}

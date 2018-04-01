@@ -1,0 +1,74 @@
+<div class="container">
+  <div>
+    <main-navbar></main-navbar>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="well">
+        <h3>Test Results</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row" ng-if='vm.reportNotAvailable'>
+    <div class="col-md-12">
+      <div class="alert alert-info">
+        <h4>Sorry !</h4>
+        <p>There is not enough data for building a report. Go back to the test.</p>
+      </div>
+    </div>
+  </div>
+  <div class="row" ng-if='!vm.reportNotAvailable'>
+    <div class="col-md-7">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h1 class="panel-title">All Values</h1>
+        </div>
+        <div class="panel-body" style="overflow:auto;">
+          <table class="table table-striped table-hover">
+            <tbody>
+              <tr ng-repeat="column in vm.allValuesReportColumns">
+                <th>{{column.name}}</th>
+                <td ng-repeat="value in vm.result[column.id].values track by $index">
+                  {{value.duration}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-5">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h1 class="panel-title">Average Reaction Time by Position</h1>
+        </div>
+        <div class="panel-body">
+          <table class="table table-striped table-hover ">
+            <thead>
+              <tr>
+                <th>&nbsp</th>
+                <th class="text-center">Total</th>
+                <th class="text-center">Average</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="position in vm.allPositions">
+                <td>
+                  <span class="position-name">{{position.name}}</span>
+                </td>
+                <td class="text-center">
+                  <span class="position-total"> {{vm.result[position.id].total | number}}</span>
+                </td>
+                <td class="text-center">
+                  <span class="position-average badge"> {{vm.result[position.id].average | number:2}}</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

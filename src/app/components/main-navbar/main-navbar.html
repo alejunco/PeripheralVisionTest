@@ -1,0 +1,16 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div id="navbar">
+      <button class="btn btn-warning" ng-if="vm.isFullscreen" ng-click="vm.exitFullscreen()">
+        <span class="octicon octicon-screen-normal"></span>&nbsp Exit
+      </button>
+      <button class="btn btn-default" ui-sref="home">
+        <span class="octicon octicon-home"></span>&nbsp Home</button>
+      <button class="btn btn-default" ui-sref="configure">
+        <span class="octicon octicon-gear"></span>&nbsp Configure</button>
+      <button class="btn btn-default" ui-sref="test">
+        <span class="octicon octicon-telescope"></span>&nbsp Test</button>     
+    </div>
+
+  </div>
+</nav>

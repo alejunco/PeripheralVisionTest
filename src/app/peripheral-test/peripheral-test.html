@@ -1,0 +1,29 @@
+<div id="test-container">
+  <div id="countdownMessage">{{vm.countdownMessage}}</div>
+
+  <nav class="navbar navbar-default navbar-fixed-top" ng-class="{'navbar-hidden': vm.isFullscreen && !vm.showNavbar}" ng-mouseover="vm.showNavbar = true"
+    ng-mouseleave="vm.showNavbar = false">
+    <div class="container">
+      <div id="navbar">
+        <button class="btn btn-default" ui-sref="home" ng-disabled="vm.testIsActive">
+          <span class="octicon octicon-home"></span>&nbsp Home</button>
+        <button class="btn btn-default" ui-sref="configure" ng-disabled="vm.testIsActive">
+          <span class="octicon octicon-gear"></span>&nbsp Configure</button>
+        <!-- <button class="btn btn-default">
+          <span class="octicon octicon-mail-read"></span>&nbsp Results</button> -->
+        <button class="btn btn-success" ng-if="vm.testState === 'new'" ng-click="vm.startNewTest()">
+          <span class="octicon octicon-screen-full"></span>&nbsp Start</button>
+        <button class="btn btn-warning" ng-if="vm.testState === 'in-progress'" ng-click="vm.endTest()">
+          <span class="octicon octicon-screen-normal"></span>&nbsp End
+        </button>
+        <button class="btn btn-primary" ng-if="vm.testState === 'finished'" ng-click="vm.resetTest()">
+          <span class="octicon octicon-sync"></span>&nbsp Reset
+        </button>
+        <button class="btn btn-info" ng-if="vm.testState === 'finished'" ui-sref="results({testResult:vm.results})">
+          <span class="octicon octicon-mail-read"></span>&nbsp Results
+        </button>
+      </div>
+    </div>
+  </nav>
+  <canvas id="canvas1"></canvas>
+</div>
